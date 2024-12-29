@@ -3,12 +3,6 @@ import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 // import Logo from '@/png/kepala';
 import Image from 'next/image';
 import Logo from '@/png/logoapk2.png';
-import Kepala from '@/png/kepala.png';
-import Email from '@/png/email.png';
-import Gembok from '@/png/gembok.png';
-import Blind from '@/png/Blind.png';
-import apel from '@/png/apel.png';
-import gugel from '@/png/Google.png';
 
 import { useState } from 'react';
 import { Signin } from '@/components/containers/sign-in/page';

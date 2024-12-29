@@ -1,90 +1,142 @@
+'use client';
+
 import React from 'react';
-import { FaHome, FaBell, FaBuilding, FaUser } from 'react-icons/fa';
+import Image from 'next/image';
+
+import Cipayung from '@/png/cipayung.png';
+import Cikarang from '@/png/cikarang.png';
+import Kaca from '@/png/Untitled.png';
+import Hero from '@/png/herooo.svg';
+import Kuningan from '@/png/kuningann.svg';
+import Toilet from '@/png/toilet.png'
+import Link from 'next/link';
+
+
 
 export default function Home() {
+
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="pb-20 h-screen overflow-y-auto bg-[#D4D4D4]">
       {/* Header */}
-      <div className="relative bg-blue-900 text-white p-4">
-        <h1 className="text-lg font-bold">HAI WARGA PARAMADINA!</h1>
-        <p>Mau kemana nih?</p>
-        <div className="absolute top-4 right-4">
-          <button className="bg-white p-2 rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5 text-gray-800">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 21l-2-2m0 0l2-2m-2 2h12M4 6l2-2m0 0l2 2M6 4v16" />
-            </svg>
-          </button>
+      <div className="relative w-full h-[240px]">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src={Hero}
+            alt="hero"
+            priority={true} 
+            quality={100}
+            layout="fill"
+            objectFit="cover"
+            className="opacity-90"
+          />
+          {/* Overlay Gradient */}
         </div>
-      </div>
+
+        {/* Teks Hero */}
+        <div className="relative z-10 flex flex-col justify-center items-start h-full px-6 ">
+          <h1 className="text-white text-lg font-semibold">
+            HAI WARGA PARAMADINA !<br/>MAU KEMANA NIH ?
+          </h1>
+        </div>
+
+          {/* Tombol Search */}
+          <div className="absolute top-8 right-4 z-10">
+            <button className="bg-white p-1 rounded shadow-md">
+              <Image src={Kaca} alt="Search Icon" width={20} height={20} />
+            </button>
+          </div>
+        </div>
 
       {/* Content */}
-      <div className="p-4">
+      <div className="p-4 ">
         <h2 className="text-xl font-bold text-gray-800 mb-4">Gedung Kampus</h2>
 
         {/* Campus Cards */}
-        <div className="space-y-4">
-          <div className="bg-white rounded-lg shadow overflow-hidden">
-            <img
-              src="/campus-cipayung.jpg"
-              alt="Kampus Cipayung"
-              className="w-full h-40 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-800">Kampus Cipayung</h3>
+        <div className=" ">
+     <Link href="/mainmenu">
+            <Image
+              src={Cipayung}
+              alt="cipayung"
+              width={384}
+              height={153}
+              priority={true}
+              quality={100}   
+              className="w-full object-cover"
+              ></Image>            
+            <div className="-translate-y-10">
+              <h3 className="pr-3 text-end text-lg font-semibold text-white">
+                KAMPUS CIPAYUNG
+              </h3>
             </div>
-          </div>
+     </Link>
 
-          <div className="bg-white rounded-lg shadow overflow-hidden">
-            <img
-              src="/campus-cikarang.jpg"
-              alt="Kampus Cikarang"
-              className="w-full h-40 object-cover"
+            <Image
+              src={Cikarang}
+              alt="cikarang"
+              width={384}
+              height={153}
+              priority={true}
+              quality={100}   
+              className="w-full object-cover"
             />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-800">Kampus Cikarang</h3>
+            <div className="-translate-y-10">
+              <h3 className="pr-3 text-end text-lg font-semibold text-white">
+                KAMPUS CIKARANG
+              </h3>
             </div>
-          </div>
 
-          <div className="bg-white rounded-lg shadow overflow-hidden">
-            <div className="w-full h-40 bg-gray-200 flex justify-center items-center">
-              <span className="text-gray-500">Kampus Kuningan</span>
-            </div>
-            <div className="p-4">
-              <h3 className="text-lg font-semibold text-gray-800">Kampus Kuningan</h3>
-            </div>
-          </div>
+
+              <Image 
+              src={Kuningan}
+              alt="kuningann"
+              width={384}
+              height={153}
+              className="w-full object-cover"
+              />
+            <div className='-translate-y-10'>
+              <h3 className="pr-3 text-end text-lg font-semibold text-white">
+                KAMPUS TRINITY
+              </h3>
+              </div>
+        
         </div>
 
         {/* Notifications */}
-        <div className="mt-6">
-          <h2 className="text-xl font-bold text-gray-800 mb-2">Notifikasi</h2>
-          <div className="bg-white p-4 rounded-lg shadow border-l-4 border-red-600">
-            <p className="text-gray-700 text-sm">
-              <span className="font-bold text-red-600">⚠ Toilet Gedung C dan D sedang dalam perbaikan</span>, untuk sementara gunakan toilet Gedung A.
+        <div className="mt-0">
+          <div className="flex bg-white p-5 rounded-lg border-2 border-red-600">
+            <Image
+            src={Toilet}
+            alt="toilet"
+            height={10}
+            width={40}
+            className='flex shrink-0'
+            /><p className="ml-4 text-black font-semibold text-[11px]">
+              Toilet Gedung C dan D sedang dalam perbaikan untuk sementara gunakan toilet Gedung A. 
             </p>
           </div>
         </div>
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white shadow-lg flex justify-between items-center p-2">
+      {/* <div className="fixed bottom-4 left-4 right-4 bg-white rounded-lg shadow-lg flex justify-between items-center px-2">
         <button className="flex flex-col items-center text-blue-900">
-          <FaHome className="text-2xl" />
+          <Image src={Rumah} alt="rumah" className="text-2xl" />
           <span className="text-xs">Menu Utama</span>
         </button>
-        <button className="flex flex-col items-center text-gray-500">
-          <FaBell className="text-2xl" />
+        <button className="flex flex-col items-center text-black ">
+          <Image src={Notif} alt="notif" className="text-2xl" />
           <span className="text-xs">Notifikasi</span>
         </button>
-        <button className="flex flex-col items-center text-gray-500">
-          <FaBuilding className="text-2xl" />
+        <button className="flex flex-col items-center text-black">
+          <Image src={Gedung} alt="gedung" className="text-2xl" />
           <span className="text-xs">Fasilitas</span>
         </button>
-        <button className="flex flex-col items-center text-gray-500">
-          <FaUser className="text-2xl" />
+        <button className="flex flex-col items-center text-black">
+          <Image src={Profil} alt="profil" className="text-2xl" />
           <span className="text-xs">Profil</span>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

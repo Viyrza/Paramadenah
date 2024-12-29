@@ -6,13 +6,13 @@ import Gembok from '@/png/gembok.png';
 
 export function SignUp() {
   return (
-    <form className="mt-6 bg-background_secondary w-full p-6">
-      <div className="border bg-white rounded-lg mb-4 flex items-center">
-        <div className="p-2">
-          <Image
-            src={Kepala}
-            alt="Kepala"
-            width={30}
+      <form className="mt-6 bg-background_secondary w-full p-6">
+        <div className="bord  er bg-white rounded-lg mb-4 flex items-center">
+          <div className="p-2">
+            <Image
+              src={Kepala}
+              alt="Kepala"
+              width={30}
             height={30}
             priority={true}
             quality={100}

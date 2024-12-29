@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Montserrat } from "next/font/google"
+import ClientLayout from "./client-layout"
 
 const montserrat = Montserrat ({
   subsets: ["latin"],
@@ -17,7 +18,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${montserrat.variable} $ antialiased`}
       >
+        <ClientLayout>
+
         {children}
+        </ClientLayout>
       </body>
     </html>
   );
