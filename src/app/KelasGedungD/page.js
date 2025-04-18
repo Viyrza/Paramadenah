@@ -10,6 +10,7 @@ import kelazz from '@/png/classroom.svg';
 import Kaca from '@/png/Untitled.png';
 import BackButton from '@/png/backbutton.svg';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
+import Link from 'next/link';
 
 export default function NurcholisPage() {
    const [activeTab, setActiveTab] = useState(0);
@@ -18,8 +19,10 @@ export default function NurcholisPage() {
       {/* Tombol Search dan back */}
       <div className="flex justify-between p-4 ">
         <button className=" ">
+          <Link href="/mainmenu">
           <Image src={BackButton} alt="backbutton" width={30} height={30} />
           back 
+          </Link>
         </button>
 
         <button className="">
@@ -73,103 +76,88 @@ export default function NurcholisPage() {
       <TabPanel>
 
 
-        {/* lantai 1 */}
-      <div className="flex-1 px-4 space-y-3">
-        {[
-          'D1-1',
-          'D1-2',
-          'D1-3',
-          'D1-4',
-          'D1-5',
-          'D1-6',
-          'D1-7',
-          'D1-8',
-          'D1-9',
-        ].map((kelas) => (
-          <div
-            key={kelas}
-            className="flex justify-between items-center border-2 border-blue-500 rounded-lg p-4 bg-white"
-          >
-            <div className="flex items-center gap-3">
-              <Image src={kelazz} alt="classroom.svg" className="" />
-              <p className="font-semibold text-lg">{kelas}</p>
-            </div>
-            <a
-              href="#"
-              className="text-blue-500 underline flex items-center gap-1"
-            >
-              Detail ↗
-            </a>
-          </div>
-        ))}
+        {/* Lantai 1 */}
+  <div className="flex-1 px-4 space-y-3">
+    {[
+      { kelas: 'D1-5', href: '/KelasGedungD/KelasD15' },
+    ].map(({ kelas, href }) => (
+      <div
+        key={kelas}
+        className="flex justify-between items-center border-2 border-blue-500 rounded-lg p-4 bg-white"
+      >
+        <div className="flex items-center gap-3">
+          <Image src={kelazz} alt="classroom.svg" className="" />
+          <p className="font-semibold text-lg">{kelas}</p>
+        </div>
+        <a
+          href={href}
+          className="text-blue-500 underline flex items-center gap-1"
+        >
+          Detail ↗
+        </a>
       </div>
-      </TabPanel>
-      <TabPanel>
-        {/* lantai 2 */}
-<h1></h1>
-      <div className="flex-1 px-4 space-y-3">
-        {[
-          'D2-1',
-          'D2-2',
-          'D2-3',
-          'D2-4',
-          'D2-5',
-          'D2-6',
-          'D2-7',
-          'D2-8',
-          'D2-9',
-        ].map((kelas) => (
-          <div
-            key={kelas}
-            className="flex justify-between items-center border-2 border-blue-500 rounded-lg p-4 bg-white"
-          >
-            <div className="flex items-center gap-3">
-              <Image src={kelazz} alt="classroom.svg" className="" />
-              <p className="font-semibold text-lg">{kelas}</p>
-            </div>
-            <a
-              href="#"
-              className="text-blue-500 underline flex items-center gap-1"
-            >
-              Detail ↗
-            </a>
-          </div>
-        ))}
-      </div>
-      </TabPanel>
-      <TabPanel>
-<h1></h1>
+    ))}
+  </div>
+</TabPanel>
 
-{/* lantai tiga */}
-      <div className="flex-1 px-4 space-y-3">
-        {[
-          'D3-1',
-          'D3-2',
-          'D3-3',
-          'D3-4',
-          'D3-5',
-          'D3-6',
-          'D3-7',
-          'D3-8',
-          'D3-9',
-        ].map((kelas) => (
-          <div
-            key={kelas}
-            className="flex justify-between items-center border-2 border-blue-500 rounded-lg p-4 bg-white"
-          >
-            <div className="flex items-center gap-3">
-              <Image src={kelazz} alt="classroom.svg" className="" />
-              <p className="font-semibold text-lg">{kelas}</p>
-            </div>
-            <a
-              href="#"
-              className="text-blue-500 underline flex items-center gap-1"
-            >
-              Detail ↗
-            </a>
-          </div>
-        ))}
+<TabPanel>
+  {/* Lantai 2 */}
+  <div className="flex-1 px-4 space-y-3">
+    {[
+      { kelas: 'D2-1', href: '/KelasGedungD/KelasD21' },
+      { kelas: 'D2-2', href: '/KelasGedungD/KelasD22' },
+      { kelas: 'D2-3', href: '/KelasGedungD/KelasD23' },
+      { kelas: 'D2-4', href: '/KelasGedungD/KelasD24' },
+      { kelas: 'D2-5', href: '/KelasGedungD/KelasD25' },
+      { kelas: 'D2-6', href: '/KelasGedungD/KelasD26' },
+    ].map(({ kelas, href }) => (
+      <div
+        key={kelas}
+        className="flex justify-between items-center border-2 border-blue-500 rounded-lg p-4 bg-white"
+      >
+        <div className="flex items-center gap-3">
+          <Image src={kelazz} alt="classroom.svg" className="" />
+          <p className="font-semibold text-lg">{kelas}</p>
+        </div>
+        <a
+          href={href}
+          className="text-blue-500 underline flex items-center gap-1"
+        >
+          Detail ↗
+        </a>
       </div>
+    ))}
+  </div>
+</TabPanel>
+
+<TabPanel>
+  {/* Lantai 3 */}
+  <div className="flex-1 px-4 space-y-3">
+    {[
+      { kelas: 'D3-1', href: '/KelasGedungD/KelasD31' },
+      { kelas: 'D3-2', href: '/KelasGedungD/KelasD32' },
+      { kelas: 'D3-3', href: '/KelasGedungD/KelasD33' },
+      { kelas: 'D3-4', href: '/KelasGedungD/KelasD34' },
+      { kelas: 'D3-5', href: '/KelasGedungD/KelasD35' },
+      { kelas: 'D3-6', href: '/KelasGedungD/KelasD36' },
+    ].map(({ kelas, href }) => (
+      <div
+        key={kelas}
+        className="flex justify-between items-center border-2 border-blue-500 rounded-lg p-4 bg-white"
+      >
+        <div className="flex items-center gap-3">
+          <Image src={kelazz} alt="classroom.svg" className="" />
+          <p className="font-semibold text-lg">{kelas}</p>
+        </div>
+        <a
+          href={href}
+          className="text-blue-500 underline flex items-center gap-1"
+        >
+          Detail ↗
+        </a>
+      </div>
+    ))}
+  </div>
       </TabPanel>
       {/* List Kelas */}
 </Tabs>

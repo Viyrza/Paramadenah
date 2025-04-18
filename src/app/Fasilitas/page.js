@@ -34,8 +34,10 @@ export default function FasilitasPage() {
       {/* Tombol Search dan back */}
       <div className="flex justify-between p-4 ">
         <button className=" ">
+          <Link href="/mainmenu">
           <Image src={BackButton} alt="backbutton" width={30} height={30} />
           back
+          </Link>
         </button>
 
         <button className="">

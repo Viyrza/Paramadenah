@@ -1,7 +1,6 @@
 'use client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import KelasD21 from '@/png/D21.svg'; // Gambar kelas utama
 import LorongD21 from '@/png/lorongd21.svg'; // Gambar koridor
 import Kelas from '@/png/classroom.svg';
 import TIPI from '@/png/tv.svg';
@@ -16,6 +15,7 @@ import ArrowUp from '@/png/DoubleUp.svg';
 import DenahD15 from '@/png/DenahD15.png';
 import gsap from 'gsap';
 import { useEffect, useMemo } from 'react';
+import Link from 'next/link';
 
 import Carousel from '@/components/ui/caraousel';
 
@@ -59,10 +59,12 @@ export default function KelasPage() {
        {/* Tombol Search dan back */}
             <div className="p-4 "> 
               <div className='flex items-center justify-between'>
+                <Link href="/KelasGedungD">
               <button className=" ">
                 <Image src={BackButton} alt="backbutton" width={30} height={30} />
                 back
               </button>
+                </Link>
               <div className="pr-24 bg-background-secondary flex justify-center items-center">
               <h1 className="bg-[#FDD998] rounded-full text-center pt-1 w-[136px] h-[40px] text-xl font-bold">KELAS</h1>
               </div>

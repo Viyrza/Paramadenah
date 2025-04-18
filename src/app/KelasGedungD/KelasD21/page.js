@@ -16,7 +16,7 @@ import ArrowUp from '@/png/DoubleUp.svg';
 import DenahD21 from '@/png/denahd21.svg';
 import gsap from 'gsap';
 import { useEffect, useMemo } from 'react';
-
+import Link from 'next/link';
 import Carousel from '@/components/ui/caraousel';
 
 const mockDataImage = [
@@ -70,8 +70,10 @@ export default function KelasPage() {
             <div className="p-4 "> 
               <div className='flex items-center justify-between'>
               <button className=" ">
+                <Link href="/KelasGedungD">
                 <Image src={BackButton} alt="backbutton" width={30} height={30} />
                 back
+                </Link>
               </button>
               <div className="pr-24 bg-background-secondary flex justify-center items-center">
               <h1 className="bg-[#FDD998] rounded-full text-center pt-1 w-[136px] h-[40px] text-xl font-bold">KELAS</h1>

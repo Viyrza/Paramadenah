@@ -9,6 +9,7 @@ import Toilet from '@/png/toilet.png'
 import Rumah2 from '@/png/rumah2.svg';
 import KelazMerah from '@/png/kelazmerah.svg';
 import PerpusMerah from '@/png/perpusmerah.svg';
+import Link from 'next/link';
 
 export default function NotificationPage() {
   
@@ -21,8 +22,10 @@ export default function NotificationPage() {
         {/* Tombol Search dan back */}
               <div className="flex justify-between py-4 gap- ">
                 <button className=" ">
+                  <Link href="/mainmenu">
                   <Image src={BackButton} alt="backbutton" width={30} height={30}
                    />
+                   </Link>
                 </button>
         
                 <button className="">

@@ -85,6 +85,7 @@ export default function Home() {
             </h3>
           </div>
           <div className="relative">
+            <Link href="KelasGedungD">
             <Image
               src={JusufKala}
               alt="jusufkala"
@@ -93,7 +94,8 @@ export default function Home() {
               priority={true}
               quality={100}
               className=" w-full object-cover"
-            />
+              />
+              </Link>
             <h3 className="bg-blue-500 opacity-80 rounded-lg absolute bottom-0 right-0  h-auto pr-3 text-left text-lg font-semibold text-white">
               GEDUNG H.M JUSUF KALA
             </h3>
